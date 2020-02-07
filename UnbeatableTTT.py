@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# TicTacToe
-# Created by Carter Hall
 '''
 Any use of this publication must require the citation of the author's name, along with a method of accessing
 the original script.
@@ -16,9 +8,9 @@ Date Began: December 19th, 2019
 Date Finished: December 23rd, 2019
 '''
 
-
-# In[2]:
-
+import numpy as np
+import copy
+from random import choice
 
 def AIDefense(dict_inv, remaining, values):
     
@@ -478,9 +470,4 @@ def main():
 
 # In[ ]:
 
-
-import numpy as np
-import copy
-from random import choice
 main()
-
