@@ -34,7 +34,7 @@ def AIDefense(dict_inv, remaining, values):
     rCol = ((dict_inv2[2] == dict_inv2[5] == dict_inv2[8]) & (dict_inv2[2] != ' '))
     lrD = ((dict_inv2[0] == dict_inv2[4] == dict_inv2[8]) & (dict_inv2[0] != ' '))
     rlD = ((dict_inv2[2] == dict_inv2[4] == dict_inv2[6]) & (dict_inv2[2] != ' '))
-    
+     
     for pos in remaining:
         if (pos-1) == 0:
             if (dict_inv2[pos] == 'X') and (dict_inv2[pos+1] == 'X'):
