@@ -1,20 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-# TicTacToe
-# Created by Carter Hall
-'''
-Any use of this publication must require the citation of the author's name, along with a method of accessing
-the original script.
-
-Credit:
-Author's Name: Carter Hall
-Date: December 19th, 2019
-'''
-
 import numpy as np
 
 dict_inv = {}
@@ -103,11 +86,4 @@ while noWinner:
         print(array_of_board[1][0], '|', array_of_board[1][1], '|', array_of_board[1][2])
         print('--+---+--')
         print(array_of_board[2][0], '|', array_of_board[2][1], '|', array_of_board[2][2])
-    
-
-
-# In[ ]:
-
-
-
-
+  
