@@ -1,13 +1,3 @@
-'''
-Any use of this publication must require the citation of the author's name, along with a method of accessing
-the original script.
-
-Credit:
-Author's Name: Carter Hall
-Date Began: December 19th, 2019
-Date Finished: December 23rd, 2019
-'''
-
 import numpy as np
 import copy
 from random import choice
