@@ -1,3 +1,5 @@
+# flake8: --ignore F821
+
 import numpy as np
 import copy
 from random import choice
