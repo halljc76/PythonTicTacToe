@@ -1,4 +1,4 @@
-# flake8: --ignore F821
+# flake8: --ignore=F821
 
 import numpy as np
 import copy
