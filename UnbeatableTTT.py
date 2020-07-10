@@ -356,6 +356,7 @@ def main():
 
     taken_pos = []
     all_pos = [1,2,3,4,5,6,7,8,9]
+    remaining = sorted(list((set(all_pos) | set(taken_pos)) - ((set(all_pos)) & set(taken_pos)))) 
 
     while noWinner:
         num_turns += 1
