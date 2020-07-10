@@ -356,7 +356,7 @@ def main():
 
     taken_pos = []
     all_pos = [1,2,3,4,5,6,7,8,9]
-    remaining = sorted(list((set(all_pos) | set(taken_pos)) - ((set(all_pos)) & set(taken_pos)))) 
+    
 
     while noWinner:
         num_turns += 1
@@ -366,6 +366,8 @@ def main():
             if len(taken_pos) > 1:
                 for i in range(len(taken_pos)):
                     if taken_pos[i] == move:
+                        remaining = sorted(list((set(all_pos) | set(taken_pos)) - ((set(all_pos)) & set(taken_pos)))) 
+                        
                         print('Taken!')
                         print('Player\'s (X) New Move.')
                         print('The remaining positions are:', remaining)
