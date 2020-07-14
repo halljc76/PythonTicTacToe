@@ -1,4 +1,4 @@
-Welcome to TicTacToe, version 1.1!
+# Welcome to TicTacToe, version 1.1!
 
 This directory contains a 2D TicTacToe game using the pygame library that merges the two .py files in the root directory into one interface.
 The user may choose which difficulty (random or algorithmic) they would like to play against.
