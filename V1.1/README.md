@@ -7,3 +7,10 @@ The algorithm is the same as that used in the .\UnbeatableTTT.py file.
 The file button.py originates from my PygameSnake repository file of the same name.
 
 The file pygameTTT.py is the base for the entire project. 
+
+For the user:
+- The 'replay' button allows you to start a new game, mid-game, if you made a move you did not intend to.
+- The 'quit' button allows you to exit the program.
+- The 'menu' button allows you to return to the main menu.
+
+- At the end of each game, after a brief pause, the menu will appear.
