@@ -7,6 +7,23 @@ import copy
 import numpy as np
 from random import choice
 
+"""
+How To Understand the AI:
+Because the dict_inv indices are 0-8, each number in remaining is subtracted 1 to refer to the proper
+value in dict_inv.
+
+Example:
+pos = 2 (equivalent of '2' as an input)
+With this in mind, a key of [pos - 1] refers to an input of '2' by the player/computer.
+Therefore:
+- [pos - 2] --> ONE LEFT (input of '1')
+- [pos + 4] --> FIVE RIGHT (input of '7')
+
+For each valid position left, the algorithm checks its corresponding ROW, COLUMN, DIAGONAL(S), and "FORKS."
+- Rows, columns, and diagonals are broken into two-value objects.
+- Forks represent two values where one is right/left of the position, and another is up/down. (Example: pos = 2, a fork would then be pos = 3 and pos = 4, pos = 1 and pos = 6, etc.
+"""
+
 def AIDefense(dict_inv, remaining):
     
     dict_inv2 = copy.copy(dict_inv)
