@@ -9,10 +9,10 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame as pg
 import numpy as np
 from random import choice
-from itertools import cycle
 
 import TicTacToeAI as computer
 from button import Button
+import images
 
 pg.init()
 pg.font.init()
@@ -34,15 +34,7 @@ FPS = 30
 
 display = pg.display.set_mode([WIDTH, HEIGHT])
 display.fill(pg.Color('white'))
-pg.display.set_caption("TicTacToe!")
-
 pg.display.flip()
-
-X = pg.image.load("X.png")
-O = pg.image.load("O.png")
-Board = pg.image.load("Board.png")
-
-pg.display.set_icon(X)
 
 blue = (0, 0, 230)
 red = (230, 0, 0)
@@ -105,6 +97,17 @@ def showDifficulty(index):
         text(display, smallFont, black, 'Impossible!', WIDTH - (BUTTON_HEIGHT * 1.5), HEIGHT - (BUTTON_HEIGHT // 2))
         pg.display.flip()
         return True
+
+
+# In[ ]:
+
+
+def change(index):
+    if index == 1:
+        return 2
+    else:
+        return 1
+
 
 # In[ ]:
 
@@ -176,7 +179,7 @@ def intro():
     display.fill(pg.Color('white'))
     
     text(display, mediumFont, black, 'Welcome to TicTacToe!', WIDTH // 2, HEIGHT // 4) 
-    text(display, smallFont, black, 'Choose a game mode and use the keys to play!', WIDTH // 2, HEIGHT // 2.5)
+    text(display, smallFont, black, 'Choose a difficulty... and good luck!', WIDTH // 2, HEIGHT // 2.5)
     
     easy = Button(display, blue, white,
                    (WIDTH // 2) - (BUTTON_HEIGHT * 4), HEIGHT * 2 // 3, BUTTON_HEIGHT * 2, BUTTON_HEIGHT, 'Easy!',
@@ -242,7 +245,7 @@ def main(index):
                   BUTTON_HEIGHT * 2, BUTTON_HEIGHT * 4, BUTTON_HEIGHT, 'Menu',
                   smallFont)
     
-    update(imageCoords, -1, Board)
+    update(imageCoords, -1, images.Board)
     
     pg.display.flip()
     
@@ -305,7 +308,7 @@ def main(index):
                 for j in range(len(counts)):
                     if (counts[j] == max(counts)) and (counts[j] > 0):
                         if positions[j] not in takenPos:
-                            update(imageCoords, j, X)
+                            update(imageCoords, j, images.X)
 
                             takenPos.append(positions[j])
                             dict_inv[positions[j] - 1] = 'X'
@@ -334,7 +337,7 @@ def main(index):
                 
             dict_inv[move - 1] = 'O'
             
-            update(imageCoords, move - 1, O)
+            update(imageCoords, move - 1, images.O)
             
             takenPos.append(move)
             remaining = sorted(list((set(positions) | set(takenPos)) -  ((set(positions)) & set(takenPos))))
