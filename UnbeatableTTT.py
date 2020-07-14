@@ -2,7 +2,7 @@ import numpy as np
 import copy
 from random import choice
 
-def AIDefense(dict_inv, remaining, values):
+def AIDefense(dict_inv, remaining):
     
     dict_inv2 = copy.copy(dict_inv)
     
@@ -250,7 +250,7 @@ def AIDefense(dict_inv, remaining, values):
 # In[3]:
 
 
-def AIOffense(dict_inv, remaining, values):
+def AIOffense(dict_inv, remaining):
 
     dict_inv3 = copy.copy(dict_inv)
     
@@ -314,7 +314,7 @@ def AIOffense(dict_inv, remaining, values):
 
     
     if max(scores) == 0:
-        return AIDefense(dict_inv, remaining, values)
+        return AIDefense(dict_inv, remaining)
     
     for j in range(len(scores)):
         if scores[j] == max(scores):
@@ -387,8 +387,8 @@ def main():
 
         else:
             print('Computer\'s (O) Move.')
-            defense, d_score = AIDefense(dict_inv, remaining, values)
-            offense, o_score = AIOffense(dict_inv, remaining, values)
+            defense, d_score = AIDefense(dict_inv, remaining)
+            offense, o_score = AIOffense(dict_inv, remaining)
                
             move = AIAlgorithm(defense, offense, d_score, o_score, remaining)
             dict_inv[move-1] = 'O'
