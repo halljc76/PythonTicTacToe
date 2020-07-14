@@ -176,7 +176,7 @@ def intro():
     display.fill(pg.Color('white'))
     
     text(display, mediumFont, black, 'Welcome to TicTacToe!', WIDTH // 2, HEIGHT // 4) 
-    text(display, smallFont, black, 'Choose a difficulty... and good luck!', WIDTH // 2, HEIGHT // 2.5)
+    text(display, smallFont, black, 'Choose a game mode and use the keys to play!', WIDTH // 2, HEIGHT // 2.5)
     
     easy = Button(display, blue, white,
                    (WIDTH // 2) - (BUTTON_HEIGHT * 4), HEIGHT * 2 // 3, BUTTON_HEIGHT * 2, BUTTON_HEIGHT, 'Easy!',
