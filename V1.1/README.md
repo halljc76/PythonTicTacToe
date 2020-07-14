@@ -16,3 +16,4 @@ For the user:
 - The keys 1-9 are valid commands for making moves in this game.
 - At the end of each game, after a brief pause, the menu will appear.
 
+### V1.2, should I arrive back at developing this project, will likely include a two-player option.
