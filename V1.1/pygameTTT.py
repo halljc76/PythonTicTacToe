@@ -106,17 +106,6 @@ def showDifficulty(index):
         pg.display.flip()
         return True
 
-
-# In[ ]:
-
-
-def change(index):
-    if index == 1:
-        return 2
-    else:
-        return 1
-
-
 # In[ ]:
 
 
