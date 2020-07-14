@@ -34,11 +34,15 @@ FPS = 30
 
 display = pg.display.set_mode([WIDTH, HEIGHT])
 display.fill(pg.Color('white'))
+pg.display.set_caption("TicTacToe!")
+
 pg.display.flip()
 
 X = pg.image.load("X.png")
 O = pg.image.load("O.png")
 Board = pg.image.load("Board.png")
+
+pg.display.set_icon(X)
 
 blue = (0, 0, 230)
 red = (230, 0, 0)
