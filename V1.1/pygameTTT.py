@@ -20,6 +20,9 @@ pg.font.init()
 
 # In[ ]:
 
+"""
+GLOBALS
+"""
 
 BOARD_WIDTH = 500
 BUTTON_HEIGHT = 50
@@ -48,10 +51,18 @@ mediumFont = pg.font.SysFont('comicsansms', 30)
 largeFont = pg.font.SysFont('comicsansms', 35)
 
 
-# In[ ]:
 
 
 def drawBoard(display, color):
+    """
+    Parameters 
+    -----------
+    display: pg.Surface
+         - Game screen.
+    color: tuple
+         - Color for the lines.
+    """
+    
     
     display.fill(white)
     
@@ -85,34 +96,22 @@ def imageCoordinates():
     return imageCoords
 
 
-# In[ ]:
-
-
-def showDifficulty(index):
-    if index == 1:
-        text(display, smallFont, black, 'Easy.', WIDTH - (BUTTON_HEIGHT // 2), HEIGHT - (BUTTON_HEIGHT // 2))
-        pg.display.flip()
-        return False
-    else:
-        text(display, smallFont, black, 'Impossible!', WIDTH - (BUTTON_HEIGHT * 1.5), HEIGHT - (BUTTON_HEIGHT // 2))
-        pg.display.flip()
-        return True
-
-
-# In[ ]:
-
-
-def change(index):
-    if index == 1:
-        return 2
-    else:
-        return 1
-
-
-# In[ ]:
-
-
 def update(imageCoords, index, image):
+    """
+    Parameters
+    ----------
+    imageCoords: List
+        - List of image coordinates that are referred to via index parameter.
+    index: Integer
+        - Parameter corresponding to move input.
+    image: type(pg.image.load('imgname.png'))
+        - Either the X or O.
+    
+    Returns
+    ---------
+    None, but updates the display to reflect necessary changes.
+    """
+    
     display.blit(image, (imageCoords[index][0], imageCoords[index][1]))
     pg.display.flip()
 
@@ -121,6 +120,9 @@ def update(imageCoords, index, image):
 
 
 def reset():
+    """
+    Resets all values for the function within main() that carry heavy functionality.
+    """
     numTurns = -1
     positions = [i for i in range(1,10)]
     takenPos = []
@@ -215,7 +217,15 @@ def intro():
 
 def main(index):
     '''
-    Make Intro Screen
+    Parameters
+    -----------
+    index: Integer
+       - Determines which computer AI is chosen, the 'random' or 'algorithm'
+    
+    Returns
+    --------
+    None: Simply handles the entire game via a while loop.
+    
     '''
     
     positions = [i for i in range(1,10)]
@@ -251,14 +261,18 @@ def main(index):
     
     while True:
         
-        numTurns += 1
+        numTurns += 1 # Alternates players
         
         if numTurns % 2 == 0:
             moveMade = False
         
         
             while not moveMade:
-                
+                """
+                A lot of the values that were used for different characteristics
+                of the buttons were simply computed as needed. Future releases will
+                likely shore this up to make it into SIMPLER invariants.
+                """
                 if replay.checkUpdates():
                     numTurns, positions, takenPos, remaining, dict_inv = reset()
                     drawBoard(display, pg.Color('black'))
@@ -354,7 +368,11 @@ def main(index):
         lrD = ((dict_inv[0] == dict_inv[4] == dict_inv[8]) & (dict_inv[0] != ' '))
         rlD = ((dict_inv[2] == dict_inv[4] == dict_inv[6]) & (dict_inv[2] != ' '))
         
-        winConds = np.array([topRow, midRow, botRow, lCol, mCol, rCol, lrD, rlD])
+        """
+        Updates from the V1.0; this helped fix bugs encountered when correctly displaying who won.
+        Note: These bugs were not present in V1.0, but where in using this for dev of V1.1.
+        """
+        winConds = np.array([topRow, midRow, botRow, lCol, mCol, rCol, lrD, rlD]) 
         ids = [dict_inv[0], dict_inv[3], dict_inv[6], dict_inv[0], dict_inv[1], dict_inv[2], dict_inv[0], dict_inv[2]]
         
         if (np.any(winConds)) == True:
