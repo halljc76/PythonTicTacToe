@@ -1,3 +1,5 @@
+## Note: This somehow does not work in Pygame's newest version; I'll have to rework this in the future!
+
 Welcome to the Classic Game TicTacToe!
 
 You may choose from one of two difficulties to play:
