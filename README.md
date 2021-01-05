@@ -1,4 +1,5 @@
-## Note: This somehow does not work in Pygame's newest version; I'll have to rework this in the future!
+### Note: This somehow does not work in Pygame's newest version; I'll have to rework this in the future!
+### Note Part 2: The CLI-based game (in the root directory) works, as it is independent of Pygame. 
 
 Welcome to the Classic Game TicTacToe!
 
